@@ -26,6 +26,11 @@ namespace Real
             LoadPhotos();
         }
 
+        private void ImageButton_OnClicked(object? sender, EventArgs e)
+        {
+            TakePhoto();
+        }
+
         private async void TakePhoto()
         {
             if (MediaPicker.Default.IsCaptureSupported)
