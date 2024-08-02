@@ -16,9 +16,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff0f7b97-9313-40d2-b794-275d9b8e8e5b" name="変更" comment="">
+      <change afterPath="$PROJECT_DIR$/MainViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NotificationReceiver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Real/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Real/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/real.metadata.v8.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/real.projects.v8.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/real.strings.v8.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Real/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Real/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Platforms/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms/Android/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Platforms/Android/MainActivity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms/Android/MainActivity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Real.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Real.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +38,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "maaeda"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/maaeda/Real.git",
+    "accountId": "bdc46647-f97a-4658-9329-7f565bd2f076"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/MainViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NotificationReceiver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Android/MainActivity.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
@@ -118,6 +142,7 @@
       <workItem from="1722510260595" duration="29000" />
       <workItem from="1722510697501" duration="291000" />
       <workItem from="1722577474269" duration="719000" />
+      <workItem from="1722578290499" duration="4469000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,7 @@
-﻿using Android.Content;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Android.Content;
 using Android.OS;
 using File = System.IO.File;
 using Android;
@@ -8,8 +11,6 @@ namespace Real
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
@@ -26,9 +27,30 @@ namespace Real
             LoadPhotos();
         }
 
-        private void ImageButton_OnClicked(object? sender, EventArgs e)
+        private async void ImageButton_OnClicked(object sender, EventArgs e)
         {
-            TakePhoto();
+            if (sender is ImageButton button && button.BindingContext is string imagePath)
+            {
+                await DisplayAlert("Image Selected", $"You selected {imagePath}", "OK");
+
+                // 画像共有の実装
+                await ShareImage(imagePath);
+            }
+        }
+
+        private async Task ShareImage(string imagePath)
+        {
+            // 画像の共有処理をここに実装します
+            // 以下はサンプルとしてファイルを共有するコードです
+
+            // 実際の画像パスに置き換えてください
+            var filePath = Path.Combine(FileSystem.AppDataDirectory, imagePath);
+
+            await Share.RequestAsync(new ShareFileRequest
+            {
+                Title = "Share Image",
+                File = new ShareFile(filePath)
+            });
         }
 
         private async void TakePhoto()
@@ -55,6 +77,8 @@ namespace Real
                     using FileStream localFileStream = File.OpenWrite(localFilePath);
 
                     await sourceStream.CopyToAsync(localFileStream);
+
+                    await ShareImage(localFilePath);
 
                     // 写真を撮った後、グリッドを更新
                     LoadPhotos();
