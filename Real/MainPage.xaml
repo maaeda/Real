@@ -1,44 +1,135 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
+    BackgroundColor="Black"
+    Shell.BackgroundColor="Black"
     x:Class="Real.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
     xmlns:local="clr-namespace:Real"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="Black" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
 
+    <Shell.TitleView>
+        <HorizontalStackLayout VerticalOptions="Fill">
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Text="Real."
+                TextColor="White"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
 
-    <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="25">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="80" />
+            <!-->DEBUG<-->
 
-            <Button
-                Clicked="OnTakePhotoBtnClicked"
-                HorizontalOptions="Fill"
-                Text="TakePhotoBtn"
-                x:Name="TakePhotoBtn" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
 
-            <Button
-                Clicked="OnLoadPhotosClicked"
-                HorizontalOptions="Fill"
-                Text="LoadPhotosBtn"
-                x:Name="LoadPhotosBtn" />
+            <!-->DEBUG<-->
+        </Grid.RowDefinitions>
+        <ScrollView>
+            <VerticalStackLayout Padding="0,0" Spacing="0">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="プレビュー"
+                    TextColor="White" />
+                <cv:CameraView
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    x:Name="cameraView" />
+                <!-->DEBUG<-->
+                <!--
+                <Image
+                    Aspect="AspectFit"
+                    BindingContext="{x:Reference cameraView}"
+                    HeightRequest="100"
+                    HorizontalOptions="Center"
+                    Source="dotnet_bot.png"
+                    WidthRequest="100"
+                    x:Name="snapPreview" />
+                -->
+                <!-->DEBUG<-->
+                <CollectionView ItemsSource="{Binding Photos}" x:Name="PhotosCollectionView">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="4" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageButton
+                                Aspect="AspectFill"
+                                Clicked="ImageButton_OnClicked"
+                                HeightRequest="100"
+                                Margin="1,1,1,1"
+                                Source="{Binding .}"
+                                WidthRequest="100" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+        <Button
+            BackgroundColor="White"
+            BorderColor="Silver"
+            BorderWidth="1"
+            Clicked="OnTakePhotoBtnClicked"
+            CornerRadius="18"
+            FontAttributes="Bold"
+            Grid.Row="1"
+            HorizontalOptions="Fill"
+            Margin="100,20,100,10"
+            Text="Realを撮影しましょう"
+            TextColor="Black"
+            x:Name="TakePhotoBtn" />
 
-            <CollectionView ItemsSource="{Binding Photos}" x:Name="PhotosCollectionView">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="3" />
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <ImageButton
-                            Aspect="AspectFill"
-                            Clicked="ImageButton_OnClicked"
-                            HeightRequest="100"
-                            Margin="0,0,0,10"
-                            Source="{Binding .}"
-                            WidthRequest="100" />
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </VerticalStackLayout>
-    </ScrollView>
+        <!-->DEBUG<-->
+        <Button
+            BorderColor="Silver"
+            BorderWidth="1"
+            Clicked="OnLoadPhotosClicked"
+            CornerRadius="18"
+            FontAttributes="Bold"
+            Grid.Row="2"
+            HorizontalOptions="Fill"
+            Margin="100,20,100,10"
+            Text="DEBUG_LoadPhotosBtn"
+            x:Name="LoadPhotosBtn" />
+
+        <Button
+            BorderColor="Silver"
+            BorderWidth="1"
+            Clicked="OnTakePhotoOnMedidaPicker"
+            CornerRadius="18"
+            FontAttributes="Bold"
+            Grid.Row="3"
+            HorizontalOptions="Fill"
+            Margin="100,20,100,10"
+            Text="DEBUG_TakePhotoOnMediaPickerBtn"
+            x:Name="TakePhotoOnMediaPickerBtn" />
+
+        <Button
+            BorderColor="Silver"
+            BorderWidth="1"
+            Clicked="OnCameraStartBtnClicked"
+            CornerRadius="18"
+            FontAttributes="Bold"
+            Grid.Row="4"
+            HorizontalOptions="Fill"
+            Margin="100,20,100,10"
+            Text="DEBUG_CameraStartBtn"
+            x:Name="CameraStartBtn" />
+        <!-->DEBUG<-->
+    </Grid>
 
 </ContentPage>

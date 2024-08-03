@@ -5,6 +5,10 @@ using Android.Content;
 using Android.OS;
 using File = System.IO.File;
 using Android;
+using Camera.MAUI;
+using Camera.MAUI.ZXing;
+using CommunityToolkit.Maui.Views;
+using System.Diagnostics;
 
 
 namespace Real
@@ -15,6 +19,67 @@ namespace Real
         {
             InitializeComponent();
             LoadPhotos();
+            cameraView.CamerasLoaded += CameraView_CamerasLoaded;
+        }
+
+        private void CameraView_CamerasLoaded(object sender, EventArgs e)
+        {
+            if (cameraView.NumCamerasDetected > 0)
+            {
+                if (cameraView.NumMicrophonesDetected > 0)
+                    cameraView.Microphone = cameraView.Microphones.First();
+                    cameraView.Camera = cameraView.Cameras.Last();//フロントカメラ
+                    Dispatcher.Dispatch(async () =>
+                    {
+                        while (await cameraView.StartCameraAsync() != CameraResult.Success)
+                        {
+                        }
+
+                    });
+            }
+        }
+
+        //MAUI.Camera
+        private async void TakePhoto()
+        {
+            var stream = await cameraView.TakePhotoAsync();
+
+            /*デバック用*/
+            /*
+            if (stream != null)
+            {
+                var result = ImageSource.FromStream(() => stream);
+                snapPreview.Source = result;
+            }
+            */
+            /*デバック用*/
+
+            if (stream != null)
+            {
+                // パブリックピクチャーディレクトリの取得
+                string picturesDirectory = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures).AbsolutePath;
+                string realDirectory = Path.Combine(picturesDirectory, "Real");
+
+                // Realディレクトリが存在しない場合は作成
+                if (!Directory.Exists(realDirectory))
+                {
+                    Directory.CreateDirectory(realDirectory);
+                }
+
+                string currentDate = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
+                string localFilePath = Path.Combine(realDirectory, $"{currentDate}.jpg");
+
+                using Stream sourceStream = stream;
+                using FileStream localFileStream = File.OpenWrite(localFilePath);
+
+                await sourceStream.CopyToAsync(localFileStream);
+
+                await ShareImage(localFilePath);
+
+                // 写真を撮った後、グリッドを更新
+                LoadPhotos();
+            }
         }
 
         private void OnTakePhotoBtnClicked(object sender, EventArgs e)
@@ -27,23 +92,26 @@ namespace Real
             LoadPhotos();
         }
 
+        private void OnTakePhotoOnMedidaPicker(object? sender, EventArgs e)
+        {
+            TakePhotoOnMedidaPicker();
+        }
+
         private async void ImageButton_OnClicked(object sender, EventArgs e)
         {
             if (sender is ImageButton button && button.BindingContext is string imagePath)
             {
+                /*デバック用*/
                 await DisplayAlert("Image Selected", $"You selected {imagePath}", "OK");
+                /*デバック用*/
 
-                // 画像共有の実装
+                // 画像共有
                 await ShareImage(imagePath);
             }
         }
 
         private async Task ShareImage(string imagePath)
         {
-            // 画像の共有処理をここに実装します
-            // 以下はサンプルとしてファイルを共有するコードです
-
-            // 実際の画像パスに置き換えてください
             var filePath = Path.Combine(FileSystem.AppDataDirectory, imagePath);
 
             await Share.RequestAsync(new ShareFileRequest
@@ -53,7 +121,8 @@ namespace Real
             });
         }
 
-        private async void TakePhoto()
+        //MediaPicker CapturePhotoAsync
+        private async void TakePhotoOnMedidaPicker()
         {
             if (MediaPicker.Default.IsCaptureSupported)
             {
@@ -98,6 +167,23 @@ namespace Real
                     .ToList();
 
                 PhotosCollectionView.ItemsSource = photos;
+            }
+        }
+
+        private void OnCameraStartBtnClicked(object? sender, EventArgs e)
+        {
+            if (cameraView.NumCamerasDetected > 0)
+            {
+                if (cameraView.NumMicrophonesDetected > 0)
+                    cameraView.Microphone = cameraView.Microphones.First();
+                cameraView.Camera = cameraView.Cameras.Last();//フロントカメラ
+                Dispatcher.Dispatch(async () =>
+                {
+                    while (await cameraView.StartCameraAsync() != CameraResult.Success)
+                    {
+                    }
+
+                });
             }
         }
     }
