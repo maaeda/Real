@@ -102,7 +102,7 @@ namespace Real
             if (sender is ImageButton button && button.BindingContext is string imagePath)
             {
                 /*デバック用*/
-                await DisplayAlert("Image Selected", $"You selected {imagePath}", "OK");
+                //await DisplayAlert("Image Selected", $"You selected {imagePath}", "OK");
                 /*デバック用*/
 
                 // 画像共有

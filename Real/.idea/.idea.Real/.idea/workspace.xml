@@ -16,34 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff0f7b97-9313-40d2-b794-275d9b8e8e5b" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/libraries/play_services_base.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/libraries/play_services_basement.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/libraries/play_services_location.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/libraries/play_services_tasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/libraries/playservicesbase_18_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/libraries/playservicesbasement_18_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/libraries/playserviceslocation_21_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/libraries/playservicestasks_18_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/real.metadata.v8.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/real.projects.v8.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/real.strings.v8.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INotificationManagerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotificationManagerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Real/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Real/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Real/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Real/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Real/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Real/FileContentIndex/2668629d-daa0-4267-95aa-ff46ccbaae10.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Real/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Real/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Real/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Real/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiProgram.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Platforms/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms/Android/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Platforms/Android/Resources/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms/Android/Resources/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Real.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Real.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +50,6 @@
     <ignored-facets>
       <facet id="Real/invalid/Android Facet - Real" />
     </ignored-facets>
-  </component>
-  <component name="PerforceDirect.Settings">
-    <option name="CHARSET" value="なし" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,

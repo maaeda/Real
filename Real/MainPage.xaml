@@ -32,11 +32,11 @@
             <RowDefinition />
             <RowDefinition Height="80" />
             <!-->DEBUG<-->
-
+            <!--
             <RowDefinition Height="80" />
             <RowDefinition Height="80" />
             <RowDefinition Height="80" />
-
+            -->
             <!-->DEBUG<-->
         </Grid.RowDefinitions>
         <ScrollView>
@@ -94,6 +94,7 @@
             x:Name="TakePhotoBtn" />
 
         <!-->DEBUG<-->
+        <!--
         <Button
             BorderColor="Silver"
             BorderWidth="1"
@@ -129,6 +130,7 @@
             Margin="100,20,100,10"
             Text="DEBUG_CameraStartBtn"
             x:Name="CameraStartBtn" />
+            -->
         <!-->DEBUG<-->
     </Grid>
 
